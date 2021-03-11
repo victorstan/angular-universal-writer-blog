@@ -1,0 +1,82 @@
+<div style="position: fixed; height: 100%; width: 100%;">
+    
+</div>
+<header class="header">
+    <!-- <img class="bg-img" src="assets/imagini/texture-bg.jpg"> -->
+    <!-- <div id="titlu">INSPIRATIE</div> -->
+    <div id="cris-container">
+        <div>
+            <div class="cris" id="cris1">CRISTI</div>
+            <div class="cris" id="cris2">N</div>
+        </div>
+        <div id="cr-2">
+            <div class="cris" id="cris3-1">A</div>
+            <div class="cris" id="cris3-2">A</div>
+            <div class="cris" id="cris4">NDRONIC</div>
+        </div>
+    <img src="assets/imagini/pen2.svg" id="pen">
+    <img src="assets/imagini/ink.png" alt="ink" id="ink">
+    </div>
+</header>
+<!-- <main class="main-grid">
+    <div *ngFor="let p of ListaPoezii" class="card" >
+        <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+        <div class="titlu" [innerHTML]="p.Titlu"></div>
+        <div class="continut" [innerHTML]="p.Continut"></div>
+    </div>
+</main> -->
+
+<div id="content">
+    <div *ngFor="let l of ListaLitere" class="floating" [style.left.%]='l.Left' [style.top.%]='l.Top'
+        [style.animationDelay.s]='l.Delay' [style.fontSize.px]='l.FontSize'>{{l.Valoare}}</div>
+    <main class="main-grid">
+
+        <div *ngFor="let p of ListaPoezii; let i=index;" attr.id="card-{{i}}" class="card"
+            (mousemove)="CardMouseMove($event, i)" (mouseleave)="CardMouseLeave(i)">
+            <div class="card-inner" attr.id="card-inner-{{i}}">
+                <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+                <div class="continut" [innerHTML]="p.Continut">
+                    <div class="titlu" [innerHTML]="p.Titlu"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- <div class="main-container">
+
+
+    <div class="p-row">
+        <div *ngFor="let p of ListaPoezii; let i=index;" attr.id="card-{{i}}" class="card" (mousemove)="CardMouseMove($event, i)" (mouseleave)="CardMouseLeave(i)">
+            <div class="card-inner" attr.id="card-inner-{{i}}">
+                <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+                <div class="titlu" [innerHTML]="p.Titlu"></div>
+                <div class="continut" [innerHTML]="p.Continut"></div>
+            </div>
+        </div>
+    </div>
+    <div class="p-row">
+        <div *ngFor="let p of ListaPoezii" class="card">
+            <div class="card-inner">
+                <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+                <div class="titlu" [innerHTML]="p.Titlu"></div>
+                <div class="continut" [innerHTML]="p.Continut"></div>
+            </div>
+        </div>
+    </div>
+    <div class="p-row">
+        <div *ngFor="let p of ListaPoezii" class="card">
+            <div class="card-inner">
+                <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+                <div class="titlu" [innerHTML]="p.Titlu"></div>
+                <div class="continut" [innerHTML]="p.Continut"></div>
+            </div>
+        </div>
+    </div>
+
+</div> -->
+
+<footer style="height:300px">
+    <div class="footer"></div>
+    <!-- <img class="bg-img" src="assets/imagini/texture-bg.jpg"> -->
+</footer>

@@ -1,0 +1,350 @@
+// :root {
+// 	--main-color: rgba(192, 249, 252, 0.5);
+// 	/*	--header-font-size:calc(1em + 3vw);
+// */
+// 	--header-line-height: 1.25em;
+// 	--base-line-height: 1.5em;
+// }
+// $base-font-size: 12px;
+
+.bg-img {
+  width: 100%;
+  position: absolute;
+}
+
+.floating {
+  opacity: 0;
+  animation: showing 10s forwards, floating 10s infinite;
+  position: absolute;
+  // z-index: 1;
+  // bottom: 400px;
+  // left: 100px;
+  // filter: blur(1px);
+  font-size: 35px;
+  user-select: none;
+  color: #555454;
+}
+
+#content {
+  position: relative;
+  overflow: hidden;
+  background: #111111;
+  background: #343434;
+  background: #272727;
+}
+
+@keyframes showing {
+  0% {
+    opacity: 0;
+  }
+
+  TO {
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+
+  50% {
+    transform: translateY(300%) rotate(55deg);
+  }
+
+  100% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+
+  50% {
+    -webkit-transform: translateY(300%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+
+  50% {
+    -webkit-transform: translateY(300%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
+#pen {
+  position: absolute;
+  height: 270px;
+  transform: rotate(-21deg);
+  transition: all .25s;
+  top: -31px;
+  left: 138px;
+}
+
+#ink {
+  position: absolute;
+  height: 29px;
+  left: 191px;
+  bottom: 45px;
+  transform: rotate(43deg);
+  opacity: 1;
+  transition-delay: .22s;
+}
+
+#cris-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+#cr-2 {
+  margin-left: 261px;
+}
+
+.cris {
+  color: black;
+  user-select: none;
+  display: inline-block;
+  font-size: 42px;
+  position: relative;
+}
+
+#cris1 {
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+#cris2 {
+  margin-left: 40px;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#cris3-1 {
+  font-size: 95px;
+  opacity: 1;
+  font-weight: lighter;
+  animation-fill-mode: forwards;
+  position: absolute;
+  transition: all .25s;
+  top: 101px;
+  left: 122px;
+  opacity: 0;
+}
+
+#cris3-2 {
+  font-size: 95px;
+  opacity: 1;
+  font-weight: lighter;
+  animation-fill-mode: forwards;
+  position: absolute;
+  transition: all .25s;
+  top: 101px;
+  left: 122px;
+}
+
+#cris4 {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  left: -65px;
+}
+
+.header {
+  width: 100%;
+  background-color: aliceblue;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  background: #111111;
+  background: #343434;
+  background: #272727;
+  background: #00534b;
+  background: #008577;
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  height: 300px;
+  position: absolute;
+}
+
+.card {
+  // box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  flex-direction: column;
+  position: relative;
+  transition: all .25s;
+  perspective: 500px;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-inner {
+  // box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  // box-shadow: 0 3px 10px 0px rgb(255 255 255 / 21%), 0 2px 9px 0px rgb(255 255 255 / 28%), 0 1px 13px 7px rgb(255 255 255 / 17%);
+  box-shadow: 0 3px 10px 0px rgba(255, 255, 255, 0.21), 0 2px 9px 0px rgba(255, 255, 255, 0.28), 0 1px 2px 0px rgba(255, 255, 255, 0.17);
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.titlu {
+  z-index: 100;
+}
+
+.continut {
+  z-index: 100;
+  z-index: 100;
+  // background: rgba(255, 255, 255, 0.5);
+  background: rgb(0 0 0 / 75%);
+  color: #dadada;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: -150px;
+  transition: all 0.5s;
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.5s;
+  filter: blur(1px);
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.p-row {
+  display: flex;
+  justify-content: center;
+  transition: all .25s;
+  flex-wrap: wrap;
+  // height: 500px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.p-row:hover {
+  transform: scale(1.1);
+  transition: all .25s;
+  margin: 30px 0;
+  z-index: 10;
+
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  transition: all .25s;
+
+  .continut {
+    bottom: 0;
+    transition: all 0.5s;
+    // background: rgba(255, 255, 255, 0.6);
+    background: rgb(0 0 0 / 90%);
+    color: white;
+  }
+
+  .card-inner {
+    // box-shadow: 0 3px 10px 0px rgba(255, 255, 255, 0.21), 0 2px 9px 0px rgba(255, 255, 255, 0.28), 0 1px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: 0 3px 10px 0px rgb(255 255 255 / 21%), 0 2px 9px 0px rgb(255 255 255 / 28%), 0 1px 13px 7px rgb(255 255 255 / 17%);
+  }
+
+  .bg-image {
+    filter: blur(4px);
+    transition: all 0.5s;
+  }
+}
+
+.header:hover {
+  #pen {
+    top: -274px;
+    left: 53px;
+  }
+
+  #ink {
+    opacity: 0;
+    transition: all 0.25s;
+  }
+
+  #cris3-1 {
+    left: 139px;
+    top: 102px;
+    font-size: 42px;
+    transition: all 0.25s;
+    opacity: 1;
+  }
+
+  #cris3-2 {
+    left: 162px;
+    top: 150px;
+    font-size: 42px;
+    transition: all 0.25s;
+  }
+}
+
+
+.main-grid {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-grid {
+    width: 80%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

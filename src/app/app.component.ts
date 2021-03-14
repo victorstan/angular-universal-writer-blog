@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, InjectionToken, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface Small {
   ext: string;

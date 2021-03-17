@@ -33,10 +33,11 @@
 
         <div *ngFor="let p of ListaPoezii; let i=index;" attr.id="card-{{i}}" class="card"
             (mousemove)="CardMouseMove($event, i)" (mouseleave)="CardMouseLeave(i)">
+            <div class="titlu-1" [innerHTML]="p.Titlu"></div>
             <div class="card-inner" attr.id="card-inner-{{i}}">
-                <div class="bg-image" style="background-image: url('assets/imagini/{{p.Imagine}}');"></div>
+                <div class="bg-image" style="background-image: url('{{p.ImgUrl}}');"></div>
+                <div class="titlu" [innerHTML]="p.Titlu"></div>
                 <div class="continut" [innerHTML]="p.Continut">
-                    <div class="titlu" [innerHTML]="p.Titlu"></div>
                 </div>
             </div>
         </div>

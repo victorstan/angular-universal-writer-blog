@@ -202,6 +202,7 @@
   position: relative;
   height: 300px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .card-inner {
@@ -218,12 +219,29 @@
   position: relative;
 }
 
+.titlu-1 {
+  position: absolute;
+  top: -4px;
+  color: #bbbbbb;
+  font-size: 20px;
+  font-weight: bold;
+  transition-delay: .25s;
+  transition:  all .25s;
+  opacity: 1;
+}
+
 .titlu {
-  z-index: 100;
+  z-index: 1000;
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  top: -25px;
+  opacity: 0;
+  transition: all .25s;
 }
 
 .continut {
-  z-index: 100;
   z-index: 100;
   // background: rgba(255, 255, 255, 0.5);
   background: rgb(0 0 0 / 75%);
@@ -233,8 +251,10 @@
   left: 0;
   right: 0;
   text-align: center;
-  bottom: -150px;
+  // bottom: -150px;
+  top: 200px;
   transition: all 0.5s;
+  height: 100%;
 }
 
 .bg-image {
@@ -280,11 +300,13 @@
   transition: all .25s;
 
   .continut {
-    bottom: 0;
+    top: 0;
     transition: all 0.5s;
     // background: rgba(255, 255, 255, 0.6);
     background: rgb(0 0 0 / 90%);
-    color: white;
+    // color: white;
+    padding-top: 40px;
+
   }
 
   .card-inner {
@@ -295,6 +317,20 @@
   .bg-image {
     filter: blur(4px);
     transition: all 0.5s;
+  }
+
+  .titlu-1 {
+    transition: all .25s;
+    transition-delay: .25s;
+    opacity: 0;
+    top: 30px;
+  }
+
+  .titlu {
+    opacity: 1;
+    transition: all .25s;
+    transition-delay: .25s;
+    top: 10px;
   }
 }
 
@@ -331,6 +367,7 @@
   width: 100%;
   display: grid;
   position: relative;
+  margin: 50px auto;
 }
 
 @media (min-width: 768px) {

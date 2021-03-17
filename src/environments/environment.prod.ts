@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  StrapiMail: 'stan.vikko@gmail.com',
+  StrapiPassword: 'ugYV48HumLPmx9R'
 };

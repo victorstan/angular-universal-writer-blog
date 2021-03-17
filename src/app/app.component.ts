@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 export interface Small {
   ext: string;
@@ -70,8 +71,8 @@ export interface Poezie {
   published_at: Date;
   created_at: Date;
   updated_at: Date;
-  Imagine: Imagine[];
   comments: any[];
+  ImgUrl: string;
 }
 
 // export class Poezie {
@@ -101,21 +102,23 @@ export class AppComponent implements OnInit {
   Alfabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   ListaLitere: Litera[] = [];
   UrlApi = 'https://vikko-api.herokuapp.com/'
+  Token = '';
   constructor(
     private http: HttpClient) {
   }
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.Paralax);
-    
-    this.DescarcaPoezii().then(() => {
-      // const interval = setInterval(() => {
-      //   const body = document.querySelector('#body') as HTMLElement;
-      //   if (body !== null && body !== undefined) {
-      //     clearInterval(interval);
-      //   }
-      // }, 200);
-      this.GenereazaArrayLitere();
+    this.GenereazaArrayLitere();
+    this.DescarcaToken().then(() => {
+      this.DescarcaPoezii().then(() => {
+        // const interval = setInterval(() => {
+        //   const body = document.querySelector('#body') as HTMLElement;
+        //   if (body !== null && body !== undefined) {
+        //     clearInterval(interval);
+        //   }
+        // }, 200);
+      });
     });
   }
 
@@ -133,8 +136,8 @@ export class AppComponent implements OnInit {
 
   DescarcaPoezii(): Promise<boolean> {
     return new Promise((response) => {
-      const url = this.UrlApi + '/poezies';
-      this.http.get(url).subscribe((res: Poezie[]) => {
+      const url = this.UrlApi + 'poezies';
+      this.http.get(url, { headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.Token }) }).subscribe((res: Poezie[]) => {
         console.log(res);
         this.ListaPoezii = res;
         response(true);
@@ -146,10 +149,13 @@ export class AppComponent implements OnInit {
 
   DescarcaToken(): Promise<boolean> {
     return new Promise((response) => {
-      const url = this.UrlApi + '/poezies';
-      this.http.get(url).subscribe((res: Poezie[]) => {
+      const url = this.UrlApi + 'auth/local';
+      this.http.post(url, {
+        identifier: environment.StrapiMail,
+        password: environment.StrapiPassword
+      }).subscribe((res: any) => {
         console.log(res);
-        this.ListaPoezii = res;
+        this.Token = res.jwt;
         response(true);
       }, error => {
         console.log(error);
@@ -191,7 +197,7 @@ export class AppComponent implements OnInit {
     // if (window.pageYOffset > document.body.scrollHeight - (4 * 300)) {
     //   footer.style.transform = 'translateY(' + (document.body.scrollHeight - (3 * 300) - window.pageYOffset) + 'px)';
     //   console.log((document.body.scrollHeight - (3 * 300) - window.pageYOffset));
-      
+
     // }
   }
 

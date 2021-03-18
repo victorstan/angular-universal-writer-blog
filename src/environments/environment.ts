@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  StrapiMail: 'stan.vikko@gmail.com',
-  StrapiPassword: 'ugYV48HumLPmx9R'
+  StrapiMail: '',
+  StrapiPassword: ''
 };
 
 /*
